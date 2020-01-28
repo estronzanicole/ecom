@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 import { reduxForm, Field } from 'redux-form';
+
 import { FormInput, FormButton } from '../formFields';
 import Details from '../details';
+
 import history from '../../history';
 
 class SignInForm extends Component {
@@ -11,7 +13,7 @@ class SignInForm extends Component {
         const links = [
             {
                 _id: 0,
-                title: 'Not Registered? Create account here',
+                title: 'Not registered? Create account here',
                 onClick: () => history.push('/signup')
             },
             {
@@ -46,14 +48,14 @@ class SignInForm extends Component {
                     title='Login'
                     name='login'
                     component={FormButton} />
-                <Details className='sign-in-form__details' title='QuicksLinks' links={links} />
+                <Details className='sign-in-form__details' title='QuickLinks' links={links} />
             </form>
         )
     }
 }
+
 SignInForm = reduxForm({
     form: 'SignInForm'
 })(SignInForm);
-
 
 export default SignInForm;
